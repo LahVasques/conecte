@@ -1,0 +1,16 @@
+/* Página padrão CSS de todas as páginas */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* paleta de cores CONECTE */
+:root {
+    --amarelo-claro: #EEFFB1;
+    --azul-escuro: #020F59;
+    --verde: #1BD079;
+    --branco-absoluto: #FFFFFF;
+}
+
