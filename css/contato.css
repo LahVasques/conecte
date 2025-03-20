@@ -1,0 +1,67 @@
+#section4 {
+    background-color: var(--azul-escuro);
+    height: 100vh;
+}
+
+#section4 img {
+    width: 200px;
+}
+
+#section4 h1{
+    margin-bottom: 2rem;
+}
+
+#formulario {
+    padding: 10vw;
+}
+
+#formulario-inputs div{
+    gap: 5px;
+}
+
+#formulario-inputs input, #formulario-inputs select, #formulario textarea{
+    font-size: 1rem;
+    height: 100%;
+    padding: 15px 15px 15px 5px;
+    color: var(--cinza);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 4px;
+}
+
+#formulario-inputs input::placeholder, #formulario textarea::placeholder{
+    color: var(--cinza);
+}
+
+#formulario-submit{
+    display: flex;
+    justify-content: center;
+}
+
+#formulario-submit button {
+    padding: 1rem 8rem;
+    font-weight: bold;
+    color: var(--cinza);
+    background-color: var(--verde-neon);
+    border-radius: 4px;
+    border: none;
+}
+
+#contato-wrap{
+    gap: 2rem;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contatos-link{
+    font-size: 30px;
+    color: var(--verde-neon);
+    background-color: var(--azul-claro);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.contatos-link a{
+    color: var(--verde-neon);
+}
