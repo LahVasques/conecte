@@ -7,7 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/reset.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="../css/contato.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -81,11 +85,81 @@
   <!-- Quarta seção -->
   <section class="section" id="section-contato">
     <div id="contato-conteudo">
-      <!-- laiss coloca ai -->
+       <section class="section container-fluid" id="section4">
+        <div class="d-flex ">
+            <img src="/img/logoConecte.png" alt="">
+        </div>
+        <div class="container p-5">
+            <div class="d-flex flex-column align-items-center">
+                <h1>Contate-nos!</h1>
+                <p>Ficou com alguma dúvida?</p>
+                <p>Deseja fazer um orçamento</p>
+                <p>Nossa equipe está a disposição. Fale conosco!</p>
+            </div>
+        </div>
+        <div id="formulario" class="container py-3">
+            <form method="POST" id="myForm" action="../factory/enviar-email.php">
+                <div id="formulario-inputs" class="row">
+                    <div class="container d-flex flex-column col-sm-6">
+                        <input placeholder="Assunto:" type="text" name="assunto">
+                        <input placeholder="Email:" type="email" name="email" id="">
+                        <select name="destinatario" id="destinatario">
+                            <option value="" disabled selected>Enviar mensagem para...</option>
+                            <option value="laisstie@gmail.com">Teste1</option>
+                            <option value="teste2@gmail.com">Teste2</option>
+                            <option value="teste3@gmail.com">Teste3</option>
+                            <option value="teste4@gmail.com">Teste4</option>
+                            <option value="teste5@gmail.com">Teste5</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <textarea name="mensagem" id="mensagem" rows="5" placeholder="Mensagem:" style="width: 100%;"></textarea>
+                    </div>
+                </div>
+                <div id="formulario-submit" class="m-4" >
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div id="contato-wrap" class="container p-3">
+
+            <div id="link-quem-somos" class="contatos-link">
+                <i class="bi bi-boxes">
+                    <a href="#section"></a>
+                </i>
+            </div>
+            <div id="link-equipe" class="contatos-link">
+                <i class="bi bi-people-fill">
+                    <a href="#section"></a>    
+                </i>
+            </div>
+        </div>
+    </section>
     </div>
   </section>
 
   <script src="../conecte/js/javascript.js"> </script>
+  <script>
+      $(document).ready(function() {
+      $("#myForm").on('submit', function(event) {
+          event.preventDefault(); 
+          var formData = $(this).serialize();
+          $.ajax({
+              type: 'POST',
+              url: '../factory/enviar-email.php',
+              dataType: "json",
+              data: formData,
+              success: function(response) { 
+                  alert(response.success); 
+              },
+              error: function(xhr, status, error){
+                  console.log(xhr); 
+              }
+          });
+      });
+  });
+  </script>
+  
 </body>
 
 </html>
