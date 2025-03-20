@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* padding e a borda são incluídos na largura e altura que forem definidas */
+}
+
+html {
+    scroll-behavior: smooth; /* faz uma rolagem suave */
+    font-family: Arial, Helvetica, sans-serif; /* fonte padrão */
+}
+
+select, input{
+    all: unset;
+}
+
+select, input, textarea {
+    outline: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* navegação - cabeçalho */
+#nav {
+    width: 73.33vw; /* calculei a proporção sabendo a largura da tela (1408/1920 . 100) e deu 73,33% */
+    height: 9.35vh; /* fiz o mesmo cálculo aqui (101/1080 . 100) de proporção */
+    border-radius: 100px;
+    background-color: var(--cinza);
+    position: absolute;
+    z-index: 1000; /* pra deixar ele na frente de tudo */
+    top: 7vh;
+    left: 50%;
+    transform: translateX(-50%); /* move o elemento ao longo do eixo x (horizontal). -50% leva ele pra esquerda  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* sombra suave */
+    padding: 0 2vw;
+    transition: opacity 0.1s;
+}
+
+/* links de navegação */
+#nav a {
+    font-size: 19px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold; /* negrito */
+    margin: 0 10px; /* espaçamento entre os links */
+}
+
+.logo {
+    width: 12.66vw; /* (243px / 1920px * 100) */
+    height: auto;
+}
+
+/* estilos específicos para as seções */
+#section-home {
+    background: url(../img/fundo-home.png) no-repeat center center/cover; /* nao repete, centraliza horizontal/vertical e cover garante que o fundo preencha toda a área disponível, sem distorcer a imagem */
+}
+
+#section-quemsomos{
+    background-color: var(--cinza);
+}
+
+#section-contato {
+    background: url(../img/contato-fundo.png) no-repeat center center/cover;
+}
+
+/* container da primeira seção */
+#container-home {
+    width: 50vw; /* largura da metade da tela */
+    height: 15vh; /* altura relativa */
+    position: absolute;
+    top: 50%; /* posiciona no meio da tela */
+    transform: translateY(-50%); /* ajusta para centralizar verticalmente */
+}
+
+/* container da segunda seção */
+#container-quemsomos{
+    width: 70vw;
+    height: 55vh;
+}
+
+/* container da terceira seção */
+#container-equipe{
+    width: 80vw;
+    height: 55vh;
+    margin-top: 20vh;
+}
+
+#nome {
+    font-size: 30px; 
+}
+
+#cargo {
+    font-size: 24px; 
+    font-style: italic;
+}
+
+#botao-mudar-texto {
+    background-color: var(--verde-neon);
+    border: none;
+    width: 80px;
+    border-radius: 100px;
+    cursor: pointer;
+    color: var(--azul-escuro);
+    font-size: 25px;
+}
+
+/* SEÇÃO CONTATO - FORMS */
+#container-contato{
+    width: 60vw;
+}
+
+#formulario {
+    padding: 10vw;
+}
+
+#formulario-inputs div{
+    align-items: stretch;
+    gap: 5px;
+}
+
+#formulario-inputs input, #formulario-inputs select, #formulario textarea{
+    font-size: 1rem;
+    height: 100%;
+    padding: 15px 15px 15px 5px;
+    color: var(--cinza);
+    background-color: var(--azul-claro);
+    border: none;
+    border-radius: 4px;
+}
+
+#formulario-inputs input::placeholder, #formulario textarea::placeholder{
+    color: var(--cinza);
+}
+
+#formulario-submit{
+    display: flex;
+    justify-content: center;
+}
+
+#formulario-submit button {
+    padding: 1rem 8rem;
+    background-color: var(--verde-neon);
+    border-radius: 4px;
+    border: none;
+}
+
+#contato-wrap{
+    gap: 2rem;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contatos-link > a, .rodape-link > a{
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+.contatos-link > a{
+    color: var(--verde-neon);
+    background-color: var(--azul-claro);
+}
+
+/* todas as seções */
+.section { 
+    height: 100vh; /* toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* botão de próxima seção */
+.next-section{
+    background-color: var(--verde-neon);
+    font-size: 100%;
+    font-weight: bold;
+    width: 14vw;
+    height: 7.9vh;
+    border: none;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 8px 8px rgba(27, 208, 121, 0.4); 
+}
+
+.next-section-equipe{
+    width: 17vw;
+}
+
+/* SEÇÃO EQUIPE */
+/* a imagem e o retângulo de texto devem estar lado a lado */
+.d-flex {
+    display: flex; 
+    justify-content: space-between; /* espaço entre a imagem e o texto */
+    align-items: center; /* alinha verticalmente no centro */
+}
+
+/* retangulo dos textos da equipe */
+#conteudo-texto > p{
+    color: var(--azul-escuro);
+}
+
+.caixa-texto {
+    background-color: var(--verde-claro);
+    border-radius: 10px;
+    width: 35vw;
+    height: 70vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* imagem do lado do retangulo da equipe */
+.equipe-img {
+    max-width: 100%;
+    padding: 10px;
+}
+
+.equipe-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-quemsomos{
+    width: 10vw;      
+    height: 10vw;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.img-sites {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+/* imagem em formato de círculo e centralizada dentro do retângulo */
+.texto-img {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+    object-fit: cover; /* imagem dentro do círculo */
+    margin: 0 auto 20px; /* centraliza a imagem e dá espaçamento abaixo dela */
+    display: block; /* para garantir que a imagem seja tratada como um bloco e centralizada */
+}
+
+/*SEÇÃO RODAPÉ*/
+#section-rodape{
+    background: url(../img/fundo-home.png) no-repeat center center/cover;
+}
+
+#rodape-img{
+    height: 20px;
+    width: 20px;
+}
+
+.rodape-link a{
+    font-size: 15px;
+    background-color: lightblue;
+    color: white;
+}

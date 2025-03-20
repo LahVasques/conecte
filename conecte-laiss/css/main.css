@@ -1,0 +1,26 @@
+/* Página padrão CSS de todas as páginas */
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* paleta de cores CONECTE */
+:root {
+    --azul-escuro: #020F59;
+    --azul-claro: #27368F80;
+    --cinza: #F1F1F1;
+    --verde-neon: #1BD079;
+    --verde-claro: #EEFFB1;
+    --laranja: #FF8716;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+p{
+    font-size: 15px;
+    font-weight: lighter;
+}
