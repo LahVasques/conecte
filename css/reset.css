@@ -43,3 +43,11 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+select, input{
+    all: unset;
+}
+
+select, input, textarea {
+    outline: 0;
+}
