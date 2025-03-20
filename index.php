@@ -85,8 +85,7 @@
   <!-- Quarta seção -->
   <section class="section" id="section-contato">
     <div id="contato-conteudo">
-       <section class="section container-fluid" id="section4">
-        <div class="d-flex ">
+        <div class="container-fluid">
             <img src="/img/logoConecte.png" alt="">
         </div>
         <div class="container p-5">
@@ -134,7 +133,6 @@
                 </i>
             </div>
         </div>
-    </section>
     </div>
   </section>
 
