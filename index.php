@@ -98,7 +98,7 @@
             </div>
         </div>
         <div id="formulario" class="container py-3">
-            <form method="POST" id="myForm" action="../factory/enviar-email.php">
+            <form method="POST" id="FormEmail" action="../factory/enviar-email.php">
                 <div id="formulario-inputs" class="row">
                     <div class="container d-flex flex-column col-sm-6">
                         <input placeholder="Assunto:" type="text" name="assunto">
@@ -123,14 +123,14 @@
         </div>
         <div id="contato-wrap" class="container p-3">
 
-            <div id="link-quem-somos" class="contatos-link">
+            <div id="link-quemsomos" class="contatos-link">
                 <i class="bi bi-boxes">
-                    <a href="#section"></a>
+                    <a href="#section-quemsomos"></a>
                 </i>
             </div>
             <div id="link-equipe" class="contatos-link">
                 <i class="bi bi-people-fill">
-                    <a href="#section"></a>    
+                    <a href="#section-equipe"></a>    
                 </i>
             </div>
         </div>
@@ -141,23 +141,7 @@
   <script src="../conecte/js/javascript.js"> </script>
   <script>
       $(document).ready(function() {
-      $("#myForm").on('submit', function(event) {
-          event.preventDefault(); 
-          var formData = $(this).serialize();
-          $.ajax({
-              type: 'POST',
-              url: '../factory/enviar-email.php',
-              dataType: "json",
-              data: formData,
-              success: function(response) { 
-                  alert(response.success); 
-              },
-              error: function(xhr, status, error){
-                  console.log(xhr); 
-              }
-          });
       });
-  });
   </script>
   
 </body>
