@@ -1,40 +1,39 @@
-/* estilos específicos para as seções */
-#section-home {
-    background: url(../img/fundo-home.png) no-repeat center center/cover; /* nao repete, centraliza horizontal/vertical e cover garante que o fundo preencha toda a área disponível, sem distorcer a imagem */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* padding e a borda são incluídos na largura e altura que forem definidas */
 }
 
-#section-quemsomos{
-    background-color: var(--cinza);
+html {
+    scroll-behavior: smooth; /* faz uma rolagem suave */
+    font-family: Arial, Helvetica, sans-serif; /* fonte padrão */
 }
 
-#section-contato {
-    background: url(../img/contato-fundo.png) no-repeat center center/cover;
+select, input{
+    all: unset;
 }
 
-/* todas as seções */
-.section { 
-    height: 100vh; /* toda a altura da tela */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+select, input, textarea {
+    outline: 0;
 }
 
-/* botão de próxima seção */
-.next-section{
-    background-color: var(--verde-neon);
-    font-size: 100%;
-    font-weight: bold;
-    width: 14vw;
-    height: 7.9vh;
-    border: none;
-    border-radius: 100px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 8px 8px rgba(27, 208, 121, 0.4); 
+ol, ul {
+    list-style: none;
 }
 
-.next-section-equipe{
-    width: 17vw;
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* navegação - cabeçalho */
@@ -42,7 +41,7 @@
     width: 73.33vw; /* calculei a proporção sabendo a largura da tela (1408/1920 . 100) e deu 73,33% */
     height: 9.35vh; /* fiz o mesmo cálculo aqui (101/1080 . 100) de proporção */
     border-radius: 100px;
-    background-color: var(--cinza);
+    background-color: #f1f1f1;
     position: absolute;
     z-index: 1000; /* pra deixar ele na frente de tudo */
     top: 7vh;
@@ -68,6 +67,19 @@
 .logo {
     width: 12.66vw; /* (243px / 1920px * 100) */
     height: auto;
+}
+
+/* estilos específicos para as seções */
+#section-home {
+    background: url(../img/fundo-home.png) no-repeat center center/cover; /* nao repete, centraliza horizontal/vertical e cover garante que o fundo preencha toda a área disponível, sem distorcer a imagem */
+}
+
+#section-quemsomos{
+    background-color: #f1f1f1;
+}
+
+#section-contato {
+    background: url(../img/contato-fundo.png) no-repeat center center/cover;
 }
 
 /* container da primeira seção */
@@ -102,13 +114,81 @@
 }
 
 #botao-mudar-texto {
-    background-color: var(--verde-neon);
+    background-color: #1BD079;
     border: none;
     width: 80px;
     border-radius: 100px;
     cursor: pointer;
-    color: var(--azul-escuro);
+    color: #020f59;
     font-size: 25px;
+}
+
+/* SEÇÃO CONTATO - FORMS */
+#formulario {
+    padding: 10vw;
+}
+
+#formulario-inputs div{
+    gap: 5px;
+}
+
+#formulario-inputs input, #formulario-inputs select, #formulario textarea{
+    font-size: 1rem;
+    height: 100%;
+    padding: 15px 15px 15px 5px;
+    color: #f1f1f1;
+    background-color: #27368f;
+    border: none;
+    border-radius: 4px;
+}
+
+#formulario-inputs input::placeholder, #formulario textarea::placeholder{
+    color: #f1f1f1;
+}
+
+#formulario-submit{
+    display: flex;
+    justify-content: center;
+}
+
+#formulario-submit button {
+    padding: 1rem 8rem;
+    background-color: #1BD079;
+    border-radius: 4px;
+    border: none;
+}
+
+#contato-wrap{
+    gap: 2rem;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* todas as seções */
+.section { 
+    height: 100vh; /* toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* botão de próxima seção */
+.next-section{
+    background-color: #1BD079;
+    font-size: 100%;
+    font-weight: bold;
+    width: 14vw;
+    height: 7.9vh;
+    border: none;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 8px 8px rgba(27, 208, 121, 0.4); 
+}
+
+.next-section-equipe{
+    width: 17vw;
 }
 
 /* SEÇÃO EQUIPE */
@@ -120,12 +200,8 @@
 }
 
 /* retangulo dos textos da equipe */
-#conteudo-texto > p{
-    color: var(--azul-escuro);
-}
-
 .caixa-texto {
-    background-color: var(--verde-claro);
+    background-color: #EEFFB1;
     border-radius: 10px;
     width: 35vw;
     height: 70vh;
@@ -171,85 +247,3 @@
     margin: 0 auto 20px; /* centraliza a imagem e dá espaçamento abaixo dela */
     display: block; /* para garantir que a imagem seja tratada como um bloco e centralizada */
 }
-
-/* SEÇÃO CONTATO - FORMS */
-#container-contato{
-    width: 60vw;
-}
-
-#formulario {
-    padding: 10vw;
-}
-
-#formulario-submit{
-    display: flex;
-    justify-content: center;
-}
-
-#formulario-inputs div{
-    align-items: stretch;
-    gap: 5px;
-}
-
-#formulario-inputs input, #formulario-inputs select, #formulario textarea{
-    font-size: 1rem;
-    height: 100%;
-    padding: 15px 15px 15px 5px;
-    color: var(--cinza);
-    background-color: var(--azul-claro);
-    border: none;
-    border-radius: 4px;
-}
-
-#formulario-inputs input::placeholder, #formulario textarea::placeholder{
-    color: var(--cinza);
-}
-
-
-#formulario-submit button {
-    padding: 1rem 8rem;
-    background-color: var(--verde-neon);
-    border-radius: 4px;
-    border: none;
-}
-
-.contatos-link > a, .rodape-link > a{
-    font-size: 30px;
-    border-radius: 50%;
-    padding: 0.5rem;
-}
-
-.contatos-link > a{
-    color: var(--verde-neon);
-    background-color: var(--azul-claro);
-}
-
-/*SEÇÃO RODAPÉ*/
-/* #section-rodape{
-    background: url(../im/fundo-home.png) no-repeat center center/cover;
-    height: 1vh;
-    padding: 1rem;    
-}
-
-#rodape-logo{
-    display: flex;
-    justify-content: center;
-    margin: 0 0 1rem 0;
-}
-
-#rodape-logo img{
-    height: 2.5rem;
-    width: auto;
-}
-
-.rodape-link a {
-    font-size: 15px;
-    background-color: lightblue;
-    color: white;
-    transition: all 300ms ease-in;
-}
-
-.rodape-link a:hover{
-    background-color: var(--verde-neon);
-    height: 2.75rem;
-} */

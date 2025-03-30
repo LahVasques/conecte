@@ -22,31 +22,31 @@ window.addEventListener('scroll', function() {
 // os dados que irão alternar: nome, cargo e conteúdo de texto
 const equipe = [
     {
-        imagem: "img/equipe/julia.jpg",
+        imagem: "img/julia.jpg",
         nome: "Julia Dias",
         cargo: "Front-end",
         texto: "Transforma designs em páginas reais, cuida para que funcione em qualquer dispositivo e garante que a navegação seja simples e agradável. Utiliza as linguagens HTML, CSS e JavaScript e trabalha junto com o back-end para integrar funções ao site ou app. Em resumo, torna a experiência do usuário funcional e atrativa."
     },
     {
-        imagem: "img/equipe/amanda.jpg",
+        imagem: "img/amanda.jpg",
         nome: "Amanda",
         cargo: "Back-end",
         texto: "Responsável pelo desenvolvimento do servidor, banco de dados e lógica do lado do servidor. Ele trabalha para garantir que as funcionalidades no site funcionem corretamente e que todos os dados sejam processados e armazenados de forma segura."
     },
     {
-        imagem: "img/equipe/laiss.jpg",
+        imagem: "img/laiss.jpg",
         nome: "Laiss",
         cargo: "Gerente e Back-end",
         texto: "Laiss é responsável pelo desenvolvimento do servidor e banco de dados, garantindo o funcionamento correto das funcionalidades do site e a segurança dos dados. Além disso, atua como gerente da equipe, organizando tarefas, designando funções e coordenando o trabalho do time."
     },
     {
-        imagem: "img/equipe/yasmin.jpg",
+        imagem: "img/yasmin.jpg",
         nome: "Yasmin Novaes",
         cargo: "Front-end",
         texto: "Transforma ideias em páginas responsivas e funcionais, garantindo uma navegação fluida em qualquer dispositivo. Usa HTML, CSS e JavaScript, colaborando com o back-end para integrar as funcionalidades e proporcionar uma experiência do usuário eficiente e agradável."
     },
     {
-        imagem: "img/equipe/tayna.jpg",
+        imagem: "img/tayna.jpg",
         nome: "Tayna Dias",
         cargo: "Designer de UX/UI",
         texto: "Trabalha com a criação de layouts e identidades visuais que representam a marca. Seu papel é garantir que a estética da interface seja atraente e funcional, trazendo uma experiência visual coesa e memorável ao usuário."
@@ -79,29 +79,73 @@ const equipe = [
             conteudoTexto.textContent = equipe[indiceAtual].texto;
             document.querySelector(".texto-img").src = equipe[indiceAtual].imagem; // atualiza a imagem
             document.getElementById("caixa-texto").style.opacity = 1; // fade-in
-        }, 500); // aguarda meio segundo antes de mudar o conteúdo      
+        }, 500); // aguarda meio segundo antes de mudar o conteúdo        
+
         
+});
 
+$(document).ready(function(){
+    $('#paragrafo-saiba-mais').hide();
+
+    $('#saiba-mais').click(function(){
+        $('#paragrafo-saiba-mais').show(1000);
     });
 
-/*Enviar o EMAIL sem refresh*/
-
-$(document).ready(function() {
-    $("#FormContato").submit(function(e) {
-    e.preventDefault(); // Evita o recarregamento da página
-
-    $.ajax({
-        url: "https://formsubmit.co/ajax/0a3dfc155a4fdd5937ba83a1042197b7", 
-        method: "POST",
-        data: $(this).serialize(), // Pega todos os campos do formulário
-        dataType: "json",
-        success: function(response) {
-        alert("Mensagem enviada com sucesso!");
-        $("#FormContato").trigger("reset"); // Limpa o formulário
-        },
-        error: function(xhr, status, error) {
-        alert("Ocorreu um erro: " + error);
+function limpa_formulário_cep() {
+    // Limpa valores do formulário de cep.
+    $("#endereco").val("");
+    $("#bairro").val("");
+    $("#cidade").val("");
+    $("#uf").val("");
+    }
+    
+    //Quando o campo cep perde o foco.
+    $("#cep").blur(function() {
+    
+    //Nova variável "cep" somente com dígitos.
+    var cep = $(this).val().replace(/\D/g, '');
+    
+    //Verifica se campo cep possui valor informado.
+    if (cep != "") {
+    
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+    
+        //Valida o formato do CEP.
+        if(validacep.test(cep)) {
+    
+            //Preenche os campos com "..." enquanto consulta webservice.
+            $("#endereco").val("...");
+            $("#bairro").val("...");
+            $("#cidade").val("...");
+            $("#uf").val("...");
+    
+            //Consulta o webservice viacep.com.br/
+            $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+    
+                if (!("erro" in dados)) {
+                    //Atualiza os campos com os valores da consulta.
+                    $("#endereco").val(dados.logradouro);
+                    $("#bairro").val(dados.bairro);
+                    $("#cidade").val(dados.localidade);
+                    $("#uf").val(dados.uf);
+                } //end if.
+                else {
+                    //CEP pesquisado não foi encontrado.
+                    limpa_formulário_cep();
+                    alert("CEP não encontrado.");
+                }
+            });
+        } //end if.
+        else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
         }
-    });
+    } //end if.
+    else {
+        //cep sem valor, limpa formulário.
+        limpa_formulário_cep();
+    }
     });
 });
