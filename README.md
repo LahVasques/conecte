@@ -1,2 +1,2 @@
 # conecte
-Site do Conecte
+versão para rodar localmente o site da nossa empresa
