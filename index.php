@@ -7,11 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../css/reset.css">
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
-  <link rel="stylesheet" type="text/css" href="../css/contato.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -21,7 +20,7 @@
     <nav id="nav" class="d-flex justify-content-between align-items-center px-4 py-3 shadow">
       <!-- logo - esquerda -->
       <a href="#section-home">
-        <img src="../conecte/img/logo.png" alt="Logo" class="logo">
+        <img src="img/logo.png" alt="Logo" class="logo">
       </a>
       <!-- links - direita -->
       <div id="links" class="d-flex gap-3"> <!-- display flex, gap é espaço entre os itens -->
@@ -50,8 +49,8 @@
       <!-- imagens dos sites que fizemos -->
       <h1 class="text-black fs-4 m-5">Nossos Projetos:</h1>
       <div class="img-sites">
-        <img src="../conecte/img/site1.png" class="img-quemsomos" alt="Imagem 1">
-        <img src="../conecte/img/site2.png" class="img-quemsomos" alt="Imagem 2">
+        <img src="img/site1.png" class="img-quemsomos" alt="Imagem 1">
+        <img src="img/site2.png" class="img-quemsomos" alt="Imagem 2">
         <img src="caminho/para/imagem.jpg" class="img-quemsomos" alt="Imagem 3">
         <img src="caminho/para/imagem.jpg" class="img-quemsomos" alt="Imagem 4">
       </div>
@@ -64,11 +63,14 @@
       <!-- retângulo de texto e setinha -->
       <div class="col-md-6 d-flex flex-column justify-content-center"> <!-- coluna de tamanho médio, largura 6 (metade da largura da tela) -->
         <div id="caixa-texto" class="caixa-texto text-center p-4">
+          <img src="img/equipe/julia.jpg" class="texto-img">
+          <p class="fw-bold" id="nome">Julia Dias</p>
+          <p class="fw-bold" id="cargo">Front-end</p>
           <p id="conteudo-texto">Transforma designs em páginas reais, cuida para que funcione em qualquer dispositivo e garante que a navegação seja simples e agradável. Utiliza as linguagens HTML, CSS e JavaScript e trabalha junto com o back-end para integrar funções ao site ou app. Em resumo, torna a experiência do usuário funcional e atrativa.</p> <!-- texto do retangulo -->
         </div>
 
         <!-- setinha para mudar o texto -->
-        <div class="arrow-container text-center mt-3"> <!-- margin top 3 -->
+        <div class="arrow-container text-center mt-2"> <!-- margin top 3 -->
           <button id="botao-mudar-texto"> <!-- botao q tem a setinha pra mudar o texto -->
             <i class="bi bi-arrow-right"></i> <!-- i de icone, "bi" é pro navegador caçar na biblioteca do bootstrap icons, por fim exibe seta apontando pra direita -->
           </button>
@@ -77,71 +79,83 @@
 
       <!-- Imagem -->
       <div class="equipe-img col-md-6"> <!-- na metade da tela -->
-        <img src="../conecte/img/equipe-img.jpg" alt="Imagem da Seção Equipe">
+        <img src="/img/equipe-img.jpg" alt="Imagem da Seção Equipe">
       </div>
     </div>
+
+    
   </section>
 
   <!-- Quarta seção -->
   <section class="section" id="section-contato">
-    <div id="contato-conteudo">
-        <div class="container-fluid">
-            <img src="/img/logoConecte.png" alt="">
+    <div id="container-contato">
+      <div class="container p-5">
+        <div class="text-white d-flex flex-column align-items-center">
+          <h1 class="fw-bold">Contate-nos!</h1>
+          <p>Ficou com alguma dúvida?</p>
+          <p>Deseja fazer um orçamento?</p>
+          <p>Nossa equipe está a disposição. Fale conosco:</p>
         </div>
-        <div class="container p-5">
-            <div class="d-flex flex-column align-items-center">
-                <h1>Contate-nos!</h1>
-                <p>Ficou com alguma dúvida?</p>
-                <p>Deseja fazer um orçamento</p>
-                <p>Nossa equipe está a disposição. Fale conosco!</p>
+      </div>
+      <div id="formulario" class="container py-3">
+        <form method="POST" id="FormContato" action="">
+          <div id="formulario-inputs" class="row">
+            <div class="container d-flex flex-column col-sm-6">
+              <input placeholder="Assunto:" type="text" name="assunto" required>
+              <input placeholder="Email:" type="email" name="email" id="" required>
+              <select name="_cc" id="cc" required>
+                <option value="" disabled selected>Enviar mensagem para...</option>
+                <option value="laisstie@gmail.com">Laiss Vasques</option>
+                <option value="teste2@gmail.com">Amanda Santana/option>
+                <option value="teste3@gmail.com">Julia Dias</option>
+                <option value="teste4@gmail.com">Tayna Dias/option>
+                <option value="teste5@gmail.com">Yasmin Novaes</option>
+              </select>
             </div>
-        </div>
-        <div id="formulario" class="container py-3">
-            <form method="POST" id="FormEmail" action="../factory/enviar-email.php">
-                <div id="formulario-inputs" class="row">
-                    <div class="container d-flex flex-column col-sm-6">
-                        <input placeholder="Assunto:" type="text" name="assunto">
-                        <input placeholder="Email:" type="email" name="email" id="">
-                        <select name="destinatario" id="destinatario">
-                            <option value="" disabled selected>Enviar mensagem para...</option>
-                            <option value="laisstie@gmail.com">Teste1</option>
-                            <option value="teste2@gmail.com">Teste2</option>
-                            <option value="teste3@gmail.com">Teste3</option>
-                            <option value="teste4@gmail.com">Teste4</option>
-                            <option value="teste5@gmail.com">Teste5</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-6">
-                        <textarea name="mensagem" id="mensagem" rows="5" placeholder="Mensagem:" style="width: 100%;"></textarea>
-                    </div>
-                </div>
-                <div id="formulario-submit" class="m-4" >
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
-        </div>
-        <div id="contato-wrap" class="container p-3">
+            <div class="col-sm-6">
+              <textarea name="mensagem" id="mensagem" rows="5" placeholder="Mensagem:" style="width: 100%;"></textarea>
+            </div>
+          </div>
+          <div id="formulario-submit" class="m-4">
+            <button class="text-white fw-bold" type="submit" id="submit">Enviar</button>
+          </div>
+        </form>
 
-            <div id="link-quemsomos" class="contatos-link">
-                <i class="bi bi-boxes">
-                    <a href="#section-quemsomos"></a>
-                </i>
-            </div>
-            <div id="link-equipe" class="contatos-link">
-                <i class="bi bi-people-fill">
-                    <a href="#section-equipe"></a>    
-                </i>
-            </div>
+        <div id="mensagemSucesso" style="display: none;">
+          Mensagem enviada com sucesso!
         </div>
+      </div>
+
     </div>
   </section>
 
-  <script src="../conecte/js/javascript.js"> </script>
-  <script>
-      $(document).ready(function() {
-      });
-  </script>
-  
+  <!-- Seção Rodapé -->
+  <!-- <section id="section-rodape">
+    <div class="container-fluid">
+      <div id="rodape-logo">
+        <img src="img/IconeLogo.png" alt="Ícone Logo da Conecte">
+      </div>
+      <div id="rodape-wrap" class="container p-3">
+        <div id="link-instaram" class="rodape-link">
+          <a href="">
+            <i class="bi bi-instagram"></i>
+          </a>  
+        </div>
+        <div id="link-wpp" class="rodape-link">
+              <a href="">
+                <i class="bi bi-whatsapp"></i>
+              </a>    
+        </div>
+        <div id="link-github" class="rodape-link">
+          <a href="">
+            <i class="bi bi-github"></i>
+          </a>    
+    </div>
+      </div>
+    </div>
+  </section> -->
+
+  <script src="js/javascript.js"> </script>
 </body>
 
 </html>
