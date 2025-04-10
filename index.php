@@ -150,7 +150,7 @@
       <div id="rodape-logo">
         <img src="img/IconeLogo.png" alt="">
       </div>
-      <div id="contato-wrap" class="container p-3">
+      <div id="rodape-wrap" class="container p-3">
         <div id="link-instaram" class="rodape-link">
           <a href="">
             <i class="bi bi-instagram"></i>
