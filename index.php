@@ -65,7 +65,7 @@
       <!-- retângulo de texto e setinha -->
       <div class="col-md-6 d-flex flex-column justify-content-center"> <!-- coluna de tamanho médio, largura 6 (metade da largura da tela) -->
         <div id="caixa-texto" class="caixa-texto text-center p-4">
-          <img src="img/julia.jpg" class="texto-img">
+          <img src="img/equipe/julia.jpg" class="texto-img">
           <p class="fw-bold" id="nome">Julia Dias</p>
           <p class="fw-bold" id="cargo">Front-end</p>
           <p id="conteudo-texto">Transforma designs em páginas reais, cuida para que funcione em qualquer dispositivo e garante que a navegação seja simples e agradável. Utiliza as linguagens HTML, CSS e JavaScript e trabalha junto com o back-end para integrar funções ao site ou app. Em resumo, torna a experiência do usuário funcional e atrativa.</p> <!-- texto do retangulo -->
