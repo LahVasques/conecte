@@ -22,31 +22,31 @@ window.addEventListener('scroll', function() {
 // os dados que irão alternar: nome, cargo e conteúdo de texto
 const equipe = [
     {
-        imagem: "img/julia.jpg",
+        imagem: "img/equipe/julia.jpg",
         nome: "Julia Dias",
         cargo: "Front-end",
         texto: "Transforma designs em páginas reais, cuida para que funcione em qualquer dispositivo e garante que a navegação seja simples e agradável. Utiliza as linguagens HTML, CSS e JavaScript e trabalha junto com o back-end para integrar funções ao site ou app. Em resumo, torna a experiência do usuário funcional e atrativa."
     },
     {
-        imagem: "img/amanda.jpg",
+        imagem: "img/equipe/amanda.jpg",
         nome: "Amanda",
         cargo: "Back-end",
         texto: "Responsável pelo desenvolvimento do servidor, banco de dados e lógica do lado do servidor. Ele trabalha para garantir que as funcionalidades no site funcionem corretamente e que todos os dados sejam processados e armazenados de forma segura."
     },
     {
-        imagem: "img/laiss.jpg",
+        imagem: "img/equipe/laiss.jpg",
         nome: "Laiss",
         cargo: "Gerente e Back-end",
         texto: "Laiss é responsável pelo desenvolvimento do servidor e banco de dados, garantindo o funcionamento correto das funcionalidades do site e a segurança dos dados. Além disso, atua como gerente da equipe, organizando tarefas, designando funções e coordenando o trabalho do time."
     },
     {
-        imagem: "img/yasmin.jpg",
+        imagem: "img/equipe/yasmin.jpg",
         nome: "Yasmin Novaes",
         cargo: "Front-end",
         texto: "Transforma ideias em páginas responsivas e funcionais, garantindo uma navegação fluida em qualquer dispositivo. Usa HTML, CSS e JavaScript, colaborando com o back-end para integrar as funcionalidades e proporcionar uma experiência do usuário eficiente e agradável."
     },
     {
-        imagem: "img/tayna.jpg",
+        imagem: "img/equipe/tayna.jpg",
         nome: "Tayna Dias",
         cargo: "Designer de UX/UI",
         texto: "Trabalha com a criação de layouts e identidades visuais que representam a marca. Seu papel é garantir que a estética da interface seja atraente e funcional, trazendo uma experiência visual coesa e memorável ao usuário."
