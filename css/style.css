@@ -163,7 +163,7 @@ table {
     border: none;
 }
 
-#contato-wrap{
+#contato-wrap, #rodape-wrap{
     gap: 2rem;
     place-items: center;
     display: flex;
@@ -272,7 +272,7 @@ table {
     background: url(../img/fundo-home.png) no-repeat center center/cover;
 }
 
-#rodape-img{
+#rodape-logo{
     height: 20px;
     width: 20px;
 }
