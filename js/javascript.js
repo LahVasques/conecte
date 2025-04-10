@@ -28,7 +28,7 @@ const equipe = [
         texto: "Transforma designs em páginas reais, cuida para que funcione em qualquer dispositivo e garante que a navegação seja simples e agradável. Utiliza as linguagens HTML, CSS e JavaScript e trabalha junto com o back-end para integrar funções ao site ou app. Em resumo, torna a experiência do usuário funcional e atrativa."
     },
     {
-        imagem: "img/equipe/amanda.jpg",
+        imagem: "/img/equipe/amanda.jpg",
         nome: "Amanda",
         cargo: "Back-end",
         texto: "Responsável pelo desenvolvimento do servidor, banco de dados e lógica do lado do servidor. Ele trabalha para garantir que as funcionalidades no site funcionem corretamente e que todos os dados sejam processados e armazenados de forma segura."
