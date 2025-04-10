@@ -145,7 +145,7 @@
   </section>
 
   <!-- Seção Rodapé -->
-  <!-- <section id="section-rodape">
+  <section id="section-rodape">
     <div class="container-fluid">
       <div id="rodape-logo">
         <img src="img/IconeLogo.png" alt="">
@@ -168,7 +168,7 @@
     </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <script src="js/javascript.js">
    
