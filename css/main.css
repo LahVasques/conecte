@@ -1,13 +1,8 @@
 /* Página padrão CSS de todas as páginas */
-html {
-    scroll-behavior: smooth; /* faz uma rolagem suave */
-    font-family: Arial, Helvetica, sans-serif; /* fonte padrão */
-}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* padding e a borda são incluídos na largura e altura que forem definidas */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* paleta de cores CONECTE */
